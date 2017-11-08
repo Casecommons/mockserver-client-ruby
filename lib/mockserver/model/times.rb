@@ -20,6 +20,10 @@ module MockServer::Model
     def initialize(supplied_value)
       @value = pre_process_value(supplied_value)
     end
+
+    def to_json(*args)
+      @value.to_json(*args)
+    end
   end
 
   # Model for times class
