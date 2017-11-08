@@ -14,7 +14,7 @@ module MockServer::Model
   # Enum for HTTP methods
   class HTTPMethod < SymbolizedEnum
     def allowed_values
-      [:GET, :POST, :PUT, :DELETE, :PATCH]
+      [:GET, :POST, :PUT, :DELETE, :PATCH, :OPTIONS]
     end
   end
 
@@ -24,7 +24,7 @@ module MockServer::Model
     include Hashie::Extensions::IgnoreUndeclared
     include Hashie::Extensions::Coercion
 
-    ALLOWED_METHODS = [:GET, :POST, :PUT, :DELETE, :PATCH]
+    ALLOWED_METHODS = [:GET, :POST, :PUT, :DELETE, :PATCH, :OPTIONS]
 
     property :method, required: true, default: :GET
     property :path, required: true, default: ''
